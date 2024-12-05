@@ -2,47 +2,49 @@ import sympy as sp
 import numpy as np
 import plotly.graph_objects as go
 
-def taylor_series_comparison():
-    formula_input = input("함수 입력 (예: sin(x), exp(x), x**2): ")
-    x = sp.Symbol('x')
-    formula = sp.sympify(formula_input)
+class TaylorSeriesPlotter:
+    def __init__(self, function, variable='x'):
+        self.function = sp.sympify(function)
+        self.variable = sp.Symbol(variable)
 
-    degrees = input("비교할 테일러 급수 차수 입력 (쉼표로 구분, 예: 2, 4, 6): ")
-    degrees = [int(degree.strip()) for degree in degrees.split(',')]
+    def taylor_series(self, center, order):
+        return sp.series(self.function, self.variable, center, order + 1).removeO()
 
-    taylor_series_list = [
-        (degree, sp.series(formula, x, 0, degree + 1).removeO()) for degree in degrees
-    ]
+    def plot_comparison(self, center, orders, x_range=(-10, 10), num_points=500):
+        x_vals = np.linspace(x_range[0], x_range[1], num_points)
+        original_func = sp.lambdify(self.variable, self.function, modules="numpy")
+        y_original = original_func(x_vals)
 
-    print("테일러 급수:")
-    for degree, taylor in taylor_series_list:
-        print(f"{degree}차: {taylor}")
+        fig = go.Figure()
 
-    plot_taylor_series_comparison(formula, taylor_series_list)
+        fig.add_trace(go.Scatter(
+            x=x_vals, y=y_original, mode='lines', name='Original Function'
+        ))
 
-def plot_taylor_series_comparison(formula, taylor_series_list):
-    x_vals = np.linspace(-10, 10, 500)
-    x = sp.Symbol('x')
+        for order in orders:
+            taylor_expr = self.taylor_series(center, order)
+            taylor_func = sp.lambdify(self.variable, taylor_expr, modules="numpy")
+            y_taylor = taylor_func(x_vals)
 
-    original_func = sp.lambdify(x, formula, "numpy")
-    y_original = original_func(x_vals)
+            fig.add_trace(go.Scatter(
+                x=x_vals, y=y_taylor, mode='lines', name=f'Taylor Series (Order {order})'
+            ))
 
-    fig = go.Figure()
-    fig.add_trace(go.Scatter(x=x_vals, y=y_original, mode='lines', name='원래 함수'))
+        fig.update_layout(
+            title=f"Taylor Series Approximation Comparison (Center: {center})",
+            xaxis_title="x",
+            yaxis_title="f(x)",
+            legend_title="Functions",
+            template="plotly_white"
+        )
 
-    for degree, taylor in taylor_series_list:
-        taylor_func = sp.lambdify(x, taylor, "numpy")
-        y_taylor = taylor_func(x_vals)
-        fig.add_trace(go.Scatter(x=x_vals, y=y_taylor, mode='lines', name=f'테일러 급수 ({degree}차)'))
+        fig.show()
 
-    fig.update_layout(
-        title="테일러 급수 차수 비교",
-        xaxis_title="x",
-        yaxis_title="y",
-        legend=dict(x=0, y=1),
-        template="plotly_white"
-    )
+if __name__ == "__main__":
+    function_input = input("function (ex: sin(x), exp(x), log(1+x)): ")
+    center_input = float(input("the center of the series: "))
+    orders_input = input("degree (ex: 2,4,6): ")
+    orders = list(map(int, orders_input.split(',')))
 
-    fig.show()
-
-taylor_series_comparison()
+    plotter = TaylorSeriesPlotter(function_input)
+    plotter.plot_comparison(center=center_input, orders=orders)
