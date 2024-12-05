@@ -9,5 +9,5 @@ def taylor_series():
     order = int(input("급수의 차수 입력: "))
 
     
-    taylor = sp.series(formula, x, center, order + 1).remove0()
+    taylor = sp.series(formula, x, center, order + 1).removeO()
     print("테일러 급수: {}". format(taylor))
