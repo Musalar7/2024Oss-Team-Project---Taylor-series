@@ -45,13 +45,3 @@ class TaylorSeriesPlotter:
         )
 
         fig.show()
-
-
-if __name__ == "__main__":
-    function_input = input("function(e.g., sin(x), exp(x), log(1+x)): ")
-    center_input = float(input("center: "))
-    orders_input = input("degrees(e.g., 2,4,6): ")
-    orders = list(map(int, orders_input.split(',')))
-
-    plotter = TaylorSeriesPlotter(function_input)
-    plotter.plot_comparison(center=center_input, orders=orders)
