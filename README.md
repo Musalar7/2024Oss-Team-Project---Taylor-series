@@ -1,2 +1,1 @@
-# 2024Oss-Team-Project---Teylor-series
-2024 Oss Team Project 
+수식을 테일러 급수로 변환
