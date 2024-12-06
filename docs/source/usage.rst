@@ -16,6 +16,9 @@ first you should install it using pip:
 
 
 
+
+
+
 1. Transform a general function into a Taylor series
 ----------------
 
@@ -27,10 +30,13 @@ you can use the ''taylor_series()'' function:
 
 
 
+
+
+
 2. Generate the graph of the Taylor series
 ------------------
 
 To convert the Taylor series created in the first step into a graph,
 you can use the ''plot()'' function:
 
-..autofunction:: class.plot
+.. autofunction:: class.plot
