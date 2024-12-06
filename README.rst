@@ -1,3 +1,3 @@
 Documentation by Sphinx
 =======================================
-This github project includes taylor series by python
+This GitHub project includes Python code for the Taylor series
