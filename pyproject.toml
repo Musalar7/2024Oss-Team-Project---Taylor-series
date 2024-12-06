@@ -1,0 +1,18 @@
+[project]
+name = "Taylor_series"
+version = "0.0.1"
+authors = [
+  { name="Park Jin Seok", email="pjs69054@hanyang.ac.kr" },
+]
+description = "Taylor series with plotly"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/Musalar7/2024Oss-Team-Project---Teylor-series"
+Issues = "https://github.com/Musalar7/2024Oss-Team-Project---Teylor-series/issues"
