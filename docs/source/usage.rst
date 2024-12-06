@@ -4,25 +4,21 @@ Usage
 Installation
 -------------
 
-To use Lumache, first install it using pip:
+To use Sympy, Numpy, Plotly 
+first you should install it using pip:
 
 .. code-block:: console
 
-    (.venv) $pip install lumache
+    (.venv) $pip install sympy
+    (.venv) $pip install numpy
+    (.venv) $pip install plotly
 
 
-Creating recipes
+Transform a general function into a Taylor series
 ----------------
 
-To retrieve a list of random ingredients, 
-you can use the ''lumache.get_random_ingredients()'' function:
+To transform a general function into a taylor series, 
+you can use the ''taylor_series()'' function:
 
-.. autofunction:: lumache.get_random_ingredients
-
-    Return a list of random ingredients as strings.
-
-    :param kind: Optional "kind" of ingredients.
-    :type kind: list[str]  or None
-    :return: The ingredients list.
-    :rtype: list[str]
+.. autofunction:: taylor_series
 
