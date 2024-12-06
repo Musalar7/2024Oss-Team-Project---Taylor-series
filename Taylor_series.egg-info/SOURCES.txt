@@ -1,8 +1,0 @@
-LICENSE
-README.md
-pyproject.toml
-taylor_seires.py
-Taylor_series.egg-info/PKG-INFO
-Taylor_series.egg-info/SOURCES.txt
-Taylor_series.egg-info/dependency_links.txt
-Taylor_series.egg-info/top_level.txt

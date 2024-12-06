@@ -1,8 +1,12 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
-name = "Taylor_series"
+name = "TSplotly"
 version = "0.0.1"
 authors = [
-  { name="Park Jin Seok", email="pjs69054@hanyang.ac.kr" },
+  { name="Group11", email="pjs69054@hanyang.ac.kr" },
 ]
 description = "Taylor series with plotly"
 readme = "README.md"
