@@ -18,7 +18,7 @@ Transform a general function into a Taylor series
 ----------------
 
 To transform a general function into a taylor series, 
-you can use the ''taylor_series.taylor_series()'' function:
+you can use the ''taylor_series()'' function:
 
-.. autofunction:: taylor_series
+.. autofunction:: taylor_series.taylor_series
 
