@@ -13,11 +13,9 @@ class TaylorSeriesPlotter:
     def plot(self, center, order, x_range=(-10, 10), num_points=500):
         """
         Plot the graph of the original function and its Taylor series approximation.
-
-      
         This plots the graph of the Taylor series created in step 1.
+        
         :param center: The center of expansion for the Taylor series.
-                       This is the point around which the Taylor series is approximated.
         :type center: float
         :param order: The order (degree) of the Taylor series.
                       This determines how many terms of the series are included in the approximation.
