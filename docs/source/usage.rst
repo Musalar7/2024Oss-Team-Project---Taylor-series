@@ -39,4 +39,4 @@ you can use the ''taylor_series()'' function:
 To convert the Taylor series created in the first step into a graph,
 you can use the ''plot()'' function:
 
-.. autofunction:: class.plot
+.. autofunction:: class.TaylorSeriesPlotter.plot
