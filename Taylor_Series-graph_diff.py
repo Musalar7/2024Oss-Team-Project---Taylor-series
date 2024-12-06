@@ -17,7 +17,9 @@ def diff_area(self, x_vals, y_original, y_taylor):
 
         return area
 
+
+# 함수 호출 방법
 # for order in orders: 구문 안 제일 밑에 삽입
-area = self.diff_area(x_vals, y_original, y_taylor)
-            for diff in area:
-                fig.add_trace(diff)
+# area = self.diff_area(x_vals, y_original, y_taylor)
+            # for diff in area:
+                # fig.add_trace(diff)
