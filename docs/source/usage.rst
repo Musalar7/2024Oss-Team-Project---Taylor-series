@@ -14,6 +14,8 @@ first you should install it using pip:
     (.venv) $pip install plotly
 
 
+
+
 Transform a general function into a Taylor series
 ----------------
 
