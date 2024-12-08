@@ -1,7 +1,7 @@
 Usage
 =====
 
-Installation
+Installationsssss
 -------------
 
 To use Sympy, Numpy, Plotly 
