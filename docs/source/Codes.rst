@@ -1,7 +1,7 @@
 Codes
 =====
 
-Installationsssss
+ssss
 -------------
 
 To use Sympy, Numpy, Plotly 
