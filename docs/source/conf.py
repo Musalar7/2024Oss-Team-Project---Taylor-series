@@ -20,6 +20,7 @@ release = '0.1'
 
 extensions = ['sphinx.ext.autodoc']
 
+language = 'ko'
 templates_path = ['_templates']
 exclude_patterns = []
 
