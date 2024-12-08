@@ -19,7 +19,7 @@ first you should install it using pip:
 
 
 
-1. Transform a general function into a Taylor series
+1. 테스트
 ----------------
 
 To transform a general function into a taylor series, 
