@@ -20,6 +20,9 @@ Codes
 첫 번째 단계에서 만든 테일러 급수를 그래프의 형태로 변환 시키기 위해
 plot()함수를 이용할 수 있다.
 
+이 함수는 주어진 중심과 차수에서 테일러 급수를 계산하고, Plotly를 사용하여 원본 함수와
+해당 급수를 시각적으로 비교할 수 있는 그래프를 생성합니다.
+
 .. autofunction:: class.TaylorSeriesPlotter.plot
 
 
