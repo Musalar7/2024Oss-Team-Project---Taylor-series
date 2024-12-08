@@ -3,7 +3,7 @@ Libraries
 
 1. Sympy
 -------------
-파이썬 코드를 상징적인 기호(ex. x, y)로 이용해 수학적 계산을 도와주는 라이브러리.
+파이썬 코드를 상징적인 기호(x, y)로 이용해 수학적 계산을 도와주는 라이브러리.
 이 프로젝트 내에서는 Series()함수를 사용.
 
 
@@ -22,6 +22,7 @@ Libraries
 
 
 코드를 실행하기 전 아래와 같은 명령어 입력 필수
+
 .. code-block:: console
 
     (.venv) $pip install sympy
