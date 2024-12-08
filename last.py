@@ -15,9 +15,8 @@ class TaylorSeriesPlotter:
         for i in range(1, len(x_vals)):
             x_area = [x_vals[i-1], x_vals[i], x_vals[i], x_vals[i-1]]
             y_area = [y_taylor[i-1], y_taylor[i], y_original[i], y_original[i-1]]
-            
-            # 차이 계산 (절댓값 사용)
-            error = abs(y_original[i] - y_taylor[i])  # 절댓값으로 차이 계산
+
+            # 차이 계산 (절댓값 사용)]
             color = "rgba(0, 0, 255, 0.2)" if y_original[i] > y_taylor[i] else "rgba(255, 0, 0, 0.2)"
             area.append(go.Scatter(
                 x=x_area,
@@ -39,9 +38,9 @@ class TaylorSeriesPlotter:
 
         # Original function trace
         fig.add_trace(go.Scatter(
-            x=x_vals, 
-            y=y_original, 
-            mode='lines', 
+            x=x_vals,
+            y=y_original,
+            mode='lines',
             name='Original Function',
             line=dict(color='blue'),
             customdata=np.stack([y_original, np.zeros_like(y_original)], axis=-1),  # [y_original, 0] 저장
@@ -56,9 +55,9 @@ class TaylorSeriesPlotter:
             # 차이 계산 (절댓값 사용)
             diff = abs(y_original - y_taylor)  # 절댓값 차이 계산
             fig.add_trace(go.Scatter(
-                x=x_vals, 
-                y=y_taylor, 
-                mode='lines', 
+                x=x_vals,
+                y=y_taylor,
+                mode='lines',
                 name=f'Taylor Series (Order {order})',
                 line=dict(color='red'),
                 customdata=np.stack([y_taylor, diff], axis=-1),  # [y_taylor, diff] 저장
@@ -78,3 +77,20 @@ class TaylorSeriesPlotter:
         )
 
         fig.show()
+
+if __name__ == "__main__":
+    try:
+        function_input = input("function (ex: sin(x), exp(x), log(1+x)): ")
+        function = sp.sympify(function_input)
+
+        center_input = input("the center of the series: ")
+        center = float(center_input)
+
+        orders_input = input("degree (ex: 2,4,6): ")
+        orders = list(map(int, orders_input.split(',')))
+
+        plotter = TaylorSeriesPlotter(function)
+        plotter.plot_comparison(center=center, orders=orders)
+
+    except (sp.SympifyError, ValueError) as e:
+        print(f"Error: {e}. Please check your inputs and try again.")
