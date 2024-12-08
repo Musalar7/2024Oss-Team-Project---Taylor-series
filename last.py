@@ -75,7 +75,6 @@ class TaylorSeriesPlotter:
             yaxis_title="f(x)",
             legend_title="Functions",
             template="plotly_white",
-            clickmode="event+select"
         )
 
         fig.show()
