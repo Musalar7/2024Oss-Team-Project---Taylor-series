@@ -22,7 +22,13 @@ Codes
 .. autofunction:: taylorseriesgap.plot_comparison
 
 
-3. **Generate the graph of the Taylor series**
+3. ** 테일러 급수와 일반 함수 비교 **
 ---------------------
 
-To convert the Taylor series created in the first step into a graph, you can use the `plot()` function. This function calculates the Taylor series at the given center and order and generates a graph that visually compares the original function and the Taylor series using Plotly.
+1, 2단계에서 구한 테일러 급수와 일반 함수 값들을 비교하여, 오차가 존재하는 영역을 시각적으로 표시하기 위해 diff_area()함수를 이용할 수 있습니다.
+
+원본 함수와 테일러 급수 간의 차이를 구한 후, 차이에 따라 다르게 색을 입힌 영역을 Plotly 라이브러리로 생성합니다.
+
+이 함수는 오차가 양수일 경우 파란색, 음수일 경우 빨간색으로 구간을 색칠합니다.
+
+.. autofunction:: Taylor_Seriesgraph_diff.diff_area
