@@ -1,10 +1,15 @@
-import sympy as sp
-import numpy as np
-import plotly.graph_objects as go
+"""
+Lumache - Python library for cooks and food lovers.
+"""
+
+__version__ = "0.1.0"
 
 
+class InvalidKindError(Exception):
+    """Raised if the kind is invalid."""
+    pass
 
-def plot_comparison():
+def plot_comparison(kind=None):
     """
     :param function: 수학적 표현으로 입력된 함수
     :type function: str
