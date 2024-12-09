@@ -7,28 +7,18 @@ __version__ = "0.1.0"
 import sympy as sp
 
 def taylor_series():
-    """
-    :param formula_input: 테일러 급수를 계산할 함수의 수학적 표현 (문자열)
-    :type formula_input: str
-    :param center: 테일러 급수의 중심
-    :type center: float
-    :param order: 테일러 급수의 차수 (몇 차까지 계산할지)
-    :type order: int
-    :returns: None
+    try:
+        function_input = input("함수를 입력하세요 (예: sin(x), exp(x), log(1+x)): ")
+        function = sp.sympify(function_input)  # 함수 입력 처리
 
-    예시:
-    >>> taylor_series()
-    함수 입력: sin(x)
-    급수의 중심 입력: 0
-    급수의 차수 입력: 4
-    테일러 급수: x - x**3/6 + O(x**5)
-    """
-    formula_input = input("함수 입력: ")
-    x = sp.Symbol('x')
-    formula = sp.sympify(formula_input)
+        center_input = input("테일러 급수의 중심을 입력하세요: ")
+        center = float(center_input)  # 중심 입력 처리
 
-    center = float(input("급수의 중심 입력: "))
-    order = int(input("급수의 차수 입력: "))
-    
-    taylor = sp.series(formula, x, center, order + 1).removeO()
-    print("테일러 급수: {}". format(taylor))
+        orders_input = input("급수의 차수를 입력하세요 (예: 2, 4, 6): ")
+        orders = list(map(int, orders_input.split(',')))  # 차수 입력 처리
+
+        plotter = TaylorSeriesPlotter(function)
+        plotter.plot_comparison(center=center, orders=orders)
+
+    except (sp.SympifyError, ValueError) as e:
+        print(f"오류 발생: {e}. 입력 값을 확인하고 다시 시도해 주세요.")
