@@ -19,7 +19,7 @@ Codes
 이 함수는 지정된 차수의 테일러 급수를 계산하고, 원본 함수와 해당 급수의 차수에 대한 근사값을
 시각적으로 비교하는 Plotly 그래프를 생성합니다.
 
-.. autofunction:: taylorseriesgap.get_random_ingredients
+.. autofunction:: taylorseriesgap.plot_comparison
 
 
 3. **Generate the graph of the Taylor series**
