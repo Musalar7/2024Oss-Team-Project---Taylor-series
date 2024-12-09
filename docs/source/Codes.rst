@@ -5,10 +5,8 @@ Codes
 ------------------------
 
 원하는 함수를 사용자에게 제공받고, 이 함수를 테일러 급수로 변환시키기 위해 `taylor_series()` 함수를 이용할 수 있습니다.
-
 이 함수는 사용자로부터 함수의 수학적 표현, 급수의 중심, 차수를 입력받아, 주어진 함수에 대해 해당 중심과 차수에서의 테일러 급수를 계산하여 출력합니다.
-
-.. autofunction:: taylor_series.taylor_series
+..autofunction:: taylor_series.taylor_series
 
 
 2. **테일러 급수의 그래프 생성**
