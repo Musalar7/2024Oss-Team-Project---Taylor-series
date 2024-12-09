@@ -11,13 +11,15 @@ Codes
 .. autofunction:: taylor_series.taylor_series
 
 
-2. **테일러 급수의 그래프 생성**
+2. **테일러 급수의 그래프 생성 **
 --------------------------
 
-첫 번째 단계에서 만든 테일러 급수를 그래프의 형태로 변환시키기 위해 `plot()` 함수를 이용할 수 있습니다.
-이 함수는 주어진 중심과 차수에서 테일러 급수를 계산하고, Plotly를 사용하여 원본 함수와 해당 급수를 시각적으로 비교할 수 있는 그래프를 생성합니다.
+첫 번째 단계에서 만든 테일러 급수를 그래프의 형태로 변환시키기 위해 plotly 라이브러리를 이용할 수 있습니다.
 
-.. autoclass:: class.TaylorSeriesPlotter.plot
+이 함수는 지정된 차수의 테일러 급수를 계산하고, 원본 함수와 해당 급수의 차수에 대한 근사값을
+시각적으로 비교하는 Plotly 그래프를 생성합니다.
+
+.. autoclass:: class.taylor-seriesgap.plot_comparison
 
 
 3. **Generate the graph of the Taylor series**
