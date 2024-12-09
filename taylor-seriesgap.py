@@ -17,6 +17,12 @@ class TaylorSeriesPlotter:
         return taylor_expr
 
     def plot_comparison(self, center, orders, x_range=(-10, 10), num_points=500):
+        """
+        :param center: 테일러 급수의 근사 중심
+
+        """
+        
+        
         x_vals = np.linspace(x_range[0], x_range[1], num_points)
         original_func = sp.lambdify(self.variable, self.function, modules="numpy")
         y_original = original_func(x_vals)
