@@ -10,6 +10,8 @@ class InvalidKindError(Exception):
     """Raised if the kind is invalid."""
     pass
 
+import sympy as sp
+
 def taylor_series():
     """
     주어진 함수에 대해 테일러 급수를 계산하고, 시각화하는 함수입니다.
@@ -18,9 +20,9 @@ def taylor_series():
     테일러 급수를 계산하고, `TaylorSeriesPlotter` 클래스를 사용하여 원본 함수와 테일러 급수의 
     시각적 비교 그래프를 생성합니다.
 
-    :param kind: 함수에 대한 수학적 표현 (예: sin(x), exp(x), log(1+x))
-    :type kind: str
-    :param center: 테일러 급수의 중심값 (예: 0, 1 등)
+    :param function: 수학적 표현으로 입력된 함수 (예: sin(x), exp(x), log(1+x))
+    :type function: str
+    :param center: 테일러 급수의 전개 중심 (예: 0, 1 등)
     :type center: float
     :param orders: 테일러 급수의 차수 목록 (예: [2, 4, 6])
     :type orders: list[int]
@@ -46,6 +48,7 @@ def taylor_series():
         orders_input = input("급수의 차수를 입력하세요 (예: 2, 4, 6): ")
         orders = list(map(int, orders_input.split(',')))  # 차수 입력 처리
 
+        # `TaylorSeriesPlotter` 클래스 인스턴스 생성 후 그래프 출력
         plotter = TaylorSeriesPlotter(function)
         plotter.plot_comparison(center=center, orders=orders)
 
