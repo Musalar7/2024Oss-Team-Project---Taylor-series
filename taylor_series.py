@@ -6,7 +6,7 @@ class InvalidKindError(Exception):
     """Raised if the kind is invalid."""
     pass
 
-def get_random_ingredients(kind=None):
+def taylor_series():
     """
     Return a list of random ingredients as strings.
 
@@ -17,4 +17,3 @@ def get_random_ingredients(kind=None):
     :rtype: list[str]
 
     """
-    return ["shells", "gorgonzola", "parsley"]
