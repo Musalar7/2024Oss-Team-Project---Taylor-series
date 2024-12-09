@@ -6,7 +6,7 @@ __version__ = "0.1.0"
 
 import sympy as sp
 
-def taylor_series():
+def taylor_series(kind = None):
     """
     주어진 함수에 대해 테일러 급수를 계산하고 그 결과를 시각화하는 함수입니다.
 
