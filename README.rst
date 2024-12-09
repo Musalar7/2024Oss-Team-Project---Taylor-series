@@ -1,3 +1,3 @@
 Documentation by Sphinx
 =======================================
-https://oss-team-project.readthedocs.io/ko/latest/Codes.html
+https://oss-team-project.readthedocs.io/ko/latest/index.html
