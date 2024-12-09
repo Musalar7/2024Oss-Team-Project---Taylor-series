@@ -9,17 +9,12 @@ class InvalidKindError(Exception):
     """Raised if the kind is invalid."""
     pass
 
-def get_random_ingredients(kind=None):
+def get_random_ingredients(self, center=0, orders=[2, 4, 6], x_range=(-10, 10), num_points=500):
     """
-    :param function: 수학적 표현으로 입력된 함수
-    :type function: str
-    :param center: 테일러 급수의 전개 중심
-    :type center: int
-    :param orders: 테일러 급수의 차수 목록
-    :type orders: list[int]
-
-    :return: None
-    :rtype: None
+    :param center: 테일러 급수 근사 중심 (기본값: 0)
+    :param orders: 테일러 급수 차수 (기본값: [2, 4, 6])
+    :param x_range: x값의 범위 (기본값: (-10, 10))
+    :param num_points: x값을 생성할 점의 수 (기본값: 500)
 
     예시:
     1. `taylor_series()` 실행 후 함수로 `sin(x)` 입력
