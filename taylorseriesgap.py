@@ -1,7 +1,7 @@
 
 __version__ = "0.1.0"
 
-def get_random_ingredients(self, center=0, orders=[2, 4, 6], x_range=(-10, 10), num_points=500):
+def plot_comparison(self, center=0, orders=[2, 4, 6], x_range=(-10, 10), num_points=500):
     """
     :param center: 테일러 급수 근사 중심 (기본값: 0)
     :param orders: 테일러 급수 차수 (기본값: [2, 4, 6])
